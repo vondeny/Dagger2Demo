@@ -2,9 +2,11 @@
 这两天一直在网上学习Dagger2，看到很多关于Dagger2的文章，其实大体都一样。下来又是标签，又是代码的；然后我创建一个工程，把代码拷贝过去并且运行。我靠，都是红色的bug，一头雾水，特别是DaggerXXXActivityComponent这个类怎么得来，不得而知。
 
 言归正传，学习Dagger2需要一点预备知识：
+
 1. Java注解
 http://www.cnblogs.com/peida/archive/2013/04/24/3036689.html
 当然，个人觉得简单的把Java注解理解为一种标注也是可以的。
+
 2. Java依赖注入
 http://www.cnblogs.com/devinzhang/p/3862942.html
 http://www.2cto.com/kf/201303/194527.html
