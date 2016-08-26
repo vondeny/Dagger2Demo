@@ -67,13 +67,21 @@ compile 'org.glassfish:javax.annotation:10.0-b28'
 ![image](https://cloud.githubusercontent.com/assets/7099994/17992870/810afdaa-6b7d-11e6-9411-50eea9b2c7e5.png)
 最后一幅图中，注意@Component中的modules的写法，使用数组的方式定义注入所使用到的Module类。
 
+
 到这里，Dagger2的配置与入门例子撰写完毕。下面简单介绍一下几个常用注解、以及一些的逻辑。
+
 1 注解
+
 @Inject 注解主要两方面的作用，首先标注需要注入的目标属性，第二是使用在构造函数上为目标属性提供依赖。
+
 @Provides 标注一个方法，该方法可以在需要提供依赖时被调用，从而把预先提供好的对象当做依赖给标注了@Inject的变量赋值。@Provides主要用于Module类中的方法
+
 @Module 用Module标注的类是专门用来提供依赖的。对于自定义的类，我们可以使用@Inject注解进行构造函数进行标注，简单；对于第三方定义的类，无法在构造函数进行处理，那么只能使用@Module的方式提供注入的依赖。
+
 @Component 标注接口，被标注了Component的接口在编译时会产生相应的类的实例来作为提供依赖方和需要依赖方之间的桥梁，把相关依赖注入到其中。
+
 除了上面4个最常用的注解之外，还有一些高级用法的注解，例如@Qualifier、@Scope、@SubComponent ，大家可以搜搜学习一下，这里就不一一展开介绍了。
+
 
 2 Activity(或者Application)、Component和Module之间的关系。使用@Inject标注构造函数的方式很好理解；对于使用Module类注入的来说，Component作为桥接功能，使得Module类与Activity关联起来。
 ![image](https://cloud.githubusercontent.com/assets/7099994/17993873/72cb15fa-6b86-11e6-90f5-ac157966f622.png)
